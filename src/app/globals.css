@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  height: 100vh;
+}
+
+*,
+::after,
+::after {
+  box-sizing: border-box;
+}
+
+@layer base {
+  :root {
+    --gradient: #1d2b64;
+    --background: 242 97.75% 98.5%;
+    --foreground: 242 5.5% 1%;
+
+    --muted: 242 5.5% 92.5%;
+    --muted-foreground: 242 2.75% 42.5%;
+
+    --popover: 242 46% 92.5%;
+    --popover-foreground: 242 5.5% 1.25%;
+
+    --card: 242 46% 92.5%;
+    --card-foreground: 242 5.5% 1.25%;
+
+    --border: 242 10.5% 90%;
+    --input: 242 10.5% 90%;
+
+    --primary: 242 55% 25%;
+    --primary-foreground: 242 1.1% 92.5%;
+
+    --secondary: 242 2.75% 96.25%;
+    --secondary-foreground: 242 4.300000000000001% 12.5%;
+
+    --accent: 242 2.75% 96.25%;
+    --accent-foreground: 242 4.300000000000001% 12.5%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --ring: 242 55% 25%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --gradient: linear-gradient(to top left, #007adf, #00ecbc);
+
+    --background: 220 65% 3.52%;
+    --foreground: 220 10% 97.2%;
+
+    --muted: 220 50% 13.2%;
+    --muted-foreground: 220 10% 54.4%;
+
+    --popover: 220 45% 5.72%;
+    --popover-foreground: 220 10% 97.2%;
+
+    --card: 220 45% 5.72%;
+    --card-foreground: 220 10% 97.2%;
+
+    --border: 220 50% 13.2%;
+    --input: 220 50% 13.2%;
+
+    --primary: 220 100% 44%;
+    --primary-foreground: 220 10% 97.2%;
+
+    --secondary: 220 50% 13.2%;
+    --secondary-foreground: 220 10% 97.2%;
+
+    --accent: 220 50% 13.2%;
+    --accent-foreground: 220 10% 97.2%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 220 10% 97.2%;
+
+    --ring: 220 100% 44%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.dotPattern {
+  background-image: radial-gradient(rgb(35, 40, 68) 1px, transparent 1px);
+  background-size: 25px 25px;
+}
+
+.use-automation-zoom-in {
+  animation: automation-zoom-in 0.5s;
+}
+
+@keyframes automation-zoom-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
