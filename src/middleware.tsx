@@ -32,11 +32,7 @@ export default authMiddleware({
     }
 
     if (url.pathname === '/sign-in' || url.pathname === '/sign-up') {
-      console.log(
-        'rewrite sign up------->',
-        new URL('/agency/sign-in', req.url).toString()
-      )
-      return NextResponse.rewrite(new URL('/agency/sign-in', req.url))
+      return NextResponse.redirect(new URL('/agency/sign-in', req.url))
     }
 
     if (url.pathname === '/') {

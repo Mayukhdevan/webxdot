@@ -27,7 +27,7 @@ const Navigation = ({ user }: Props) => {
           <Link href='#'>Features</Link>
         </ul>
       </nav>
-      <aside className='flex gap-2 item-center'>
+      <aside className='flex gap-2 items-center'>
         <Link
           href='/agency'
           className='bg-primary text-white px-4 p-2 rounded-md hover:bg-primary/80'
