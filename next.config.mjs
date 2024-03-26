@@ -9,7 +9,7 @@ const nextConfig = {
       'files.stripe.com',
     ],
   },
-  reactStrictMode: false,
+  reactStrictMode: true,
 }
 
 export default nextConfig
