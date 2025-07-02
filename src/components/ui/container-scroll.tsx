@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useRef } from 'react'
-import { useScroll, useTransform, motion } from 'framer-motion'
+import { useScroll, useTransform, motion, MotionValue } from 'framer-motion'
 
 export const ContainerScroll = ({
   children,
@@ -29,12 +29,12 @@ export const ContainerScroll = ({
     return isMobile ? [1.1, 1] : [1, 1.1]
   }
 
-  const scale = useTransform(scrollYProgress, [0, 1], scaleDimensions())
-  const translate = useTransform(scrollYProgress, [0, 1], [0, -100])
+  const scale = useTransform(scrollYProgress, [0, 2], scaleDimensions())
+  const translate = useTransform(scrollYProgress, [0, 1], [20, 0])
 
   return (
     <div
-      className='h-[60rem] md:h-[80rem] flex items-center justify-center relative p-2 md:p-20 md:mt-[-460px] mt-[-350px] w-full'
+      className='flex justify-center relative overflow-hidden md:-mt-52 -mt-48 z-50 w-full p-10 min-h-[35vh] md:min-h-[1600px]'
       ref={containerRef}
     >
       <div
@@ -53,10 +53,11 @@ export const ContainerScroll = ({
 
 export const Card = ({
   scale,
+  translate,
   children,
 }: {
   scale: any
-  translate: any
+  translate: MotionValue<number>
   children: React.ReactNode
 }) => {
   return (
@@ -64,6 +65,8 @@ export const Card = ({
       style={{
         scale,
         transformOrigin: 'bottom',
+
+        // rotateX: translate,
       }}
     >
       {children}
